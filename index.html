@@ -9,9 +9,9 @@
 <body>
   <script>
     // 检测字符串中出现次数最多的字符
-    const str = 'abaaaccccdsdsadasfgergrhthrthtgfwdadafsgsgdrg'
-    let [json, max, cont] = [{}, 0, 0] //max:出现最多的字符 
-    // cont: 次数 json存放字符对象 
+    const str = 'abaaaccccdsdsadasfgergrhthrthtgfwdadbbbbbbbbbbbbbafsgsgdrg'
+    let [json, max, cont] = [{}, 0, 0] //max:次数
+    // cont: 出现最多的字符  json存放字符对象 
     for (let i = 0, len = str.length; i < len; i++) {
       if (!json[str[i]]) {  //没有存过相应键名
         json[str[i]] = 1
@@ -22,8 +22,8 @@
     for (let j in json) {
       // 遍历找出出现次数最多的字符和出现次数
       if (max < json[j]) {
-        max = j
-        cont = json[j]
+        max = json[j]
+        cont = j
       }
     }
     console.log(max, cont)
