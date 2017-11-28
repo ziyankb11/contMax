@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 检测字符串中出现次数最多的字符
+    const str = 'abaaaccccdsdsadasfgergrhthrthtgfwdadafsgsgdrg'
+    let [json, max, cont] = [{}, 0, 0] //max:出现最多的字符 
+    // cont: 次数 json存放字符对象 
+    for (let i = 0, len = str.length; i < len; i++) {
+      if (!json[str[i]]) {  //没有存过相应键名
+        json[str[i]] = 1
+      } else { //再次出现++
+        json[str[i]]++
+      }
+    }
+    for (let j in json) {
+      // 遍历找出出现次数最多的字符和出现次数
+      if (max < json[j]) {
+        max = j
+        cont = json[j]
+      }
+      console.log(max, cont)
+    }
+  </script>
+</body>
+</html>
